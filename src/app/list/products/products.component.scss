@@ -1,0 +1,154 @@
+.mainDivProduct {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 220px);
+    justify-content: center;    
+    margin-bottom: 10px;
+}
+
+.mainDivProduct > img {
+    border-radius: 30px;
+}
+
+.itemDiv-mainPart {
+    height: 400px !important;
+    overflow: hidden;
+    border-radius: 2% 2% 0 0;
+    margin: 5%;
+}
+
+.itemDiv-mainPart-div-img {
+    box-sizing: border-box;
+    height: 60%;
+    top: 50%;
+    left: 50%;
+}
+
+.itemDiv-mainPart-img {
+    // height: 90% !important;
+    width: 90%;
+    // left: 50%;
+    transition: transform 0.3s, opacity 0.3s;
+    object-fit: cover;
+    display: block;
+}
+
+.itemDiv-mainPart-details {
+    height: 40%;
+}
+
+.itemDiv-mainPart-details > .title{
+    margin: 3%;
+}
+
+.itemDiv-mainPart-details > .maj-specs{
+    margin: 3%;
+}
+
+.itemDiv-mainPart-details > .min-specs{
+    margin: 3%;
+}
+
+// @media (hover: hover) {
+//     .itemDiv-mainPart-img:hover {
+//         transform: translateY(0) scale(1.2);
+//     }
+// }
+    
+.itemDiv-mainPart-name {
+    z-index: 100;
+    box-sizing: border-box;
+    position: absolute;
+    display: block;
+    background-color: wheat;
+    color: #0D6EFD;
+    padding: 0 1%;
+    border-radius: 0 0 2% 2%;
+}
+
+.itemDiv-mainPart-name-title{
+    margin: 6px 0 6px 0;
+    text-align: center;
+    text-overflow: ellipsis;
+}
+
+.itemDiv-mainPart-img, .itemDiv-mainPart-details, .itemDiv-mainPart-name-title{
+    cursor: pointer;
+}
+
+img#modalImg {
+    width: 50%;
+}
+
+.alignPagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.modalGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 40%);
+    justify-content: center;    
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    place-items: center;
+}
+
+@media (hover: hover) {
+    .modalGrid {
+        grid-template-columns: repeat(auto-fill, 250px);
+    }
+    .modal-dialog {
+        width: 70vw;    
+        min-width: 70vw;
+        max-width: 70vw;
+    }
+}
+
+.modalBody {
+    overflow-y: auto;
+}
+.modal-content {
+    height: 70vh;
+    max-height: 70vh;
+}
+
+.modalDiv {
+    margin: 5% auto;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.modalDivImg {
+    width: 80%;
+    border-radius: 2%;
+}
+
+@media (max-width: 600px) {
+    #menuDiv {
+        margin-top: 20%;
+    }
+
+    .itemDiv-mainPart {
+        margin-bottom: 10%;
+    }
+}
+
+@media (min-width: 600px) {
+    #menuDiv {
+        margin-top: 70px;
+    }
+
+    .itemDiv-mainPart {
+        margin-bottom: 15%;
+    }
+
+    .itemDiv-mainPart-name {
+        box-sizing: border-box;
+        white-space: normal;
+    }
+}

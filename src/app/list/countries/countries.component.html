@@ -1,0 +1,10 @@
+<p>Pays de livraison :</p>
+<select (change)="update($event)">
+    <option value="default">---</option>
+    <option *ngFor="let country of countriesList" [value]="country.id">
+        {{country.code}} - {{country.name}}
+    </option>
+</select>
+<p *ngIf="showMsg">
+    Le délai de livraison vers {{selected['cod']}}{{selected['name']}} estimé est de {{selected['deliveryTime']}} jours.
+</p>

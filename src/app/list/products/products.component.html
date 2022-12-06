@@ -1,0 +1,29 @@
+<div id="mainDiv">
+    <div class="mainDivProduct">
+        <div class="itemDiv-mainPart" *ngFor="let product of products">
+            <div class="itemDiv-mainPart-div-img">
+                <img class="itemDiv-mainPart-img" src={{product.picture}} alt={{product.name}} />
+            </div>
+            <div class="itemDiv-mainPart-details">
+                <h3 class="maj-specs" >
+                    {{product.name}}
+                </h3>
+                <h5 class="maj-specs" >
+                    {{product.specifications.price}}
+                </h5>
+                <div class="min-specs">
+                    Storage : {{product.specifications.storage}}
+                </div>
+                <div class="min-specs">
+                    Color : {{product.specifications.color}}
+                </div>
+                <div class="min-specs">
+                    Weight : {{product.specifications.weight}}
+                </div>
+                <button (click)="addToCart(product.id)">
+                    Add to cart
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
