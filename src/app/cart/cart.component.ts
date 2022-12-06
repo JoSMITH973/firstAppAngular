@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent {
-
+    items: any[] = JSON.parse(localStorage.getItem("cart") || '{}');
 }

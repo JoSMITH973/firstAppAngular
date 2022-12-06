@@ -1,1 +1,24 @@
-<p>cart works!</p>
+<div id="mainDivProduct">
+    <div class="itemDiv-mainPart" *ngFor="let item of items">
+        <div class="itemDiv-mainPart-div-img">
+            <img class="itemDiv-mainPart-img" src={{item.picture}} alt={{item.name}} />
+        </div>
+        <div class="itemDiv-mainPart-details">
+            <h3 class="maj-specs">
+                {{item.name}}
+            </h3>
+            <h5 class="maj-specs">
+                {{item.specifications.price}}
+            </h5>
+            <div class="min-specs">
+                Storage : {{item.specifications.storage}}
+            </div>
+            <div class="min-specs">
+                Color : {{item.specifications.color}}
+            </div>
+            <div class="min-specs">
+                Weight : {{item.specifications.weight}}
+            </div>
+        </div>
+    </div>
+</div>

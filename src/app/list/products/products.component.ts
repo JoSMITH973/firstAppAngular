@@ -64,7 +64,41 @@ export class ProductsComponent {
         },
     ];
 
+    cart: any[] = [];
+    productToUpdate: any[] = [];
+    cartString = "";
+    checkIfLocalStorageExist = false;
+
     addToCart(product) {
-        console.log(product);
+
+        // On vérifie si le localStorage est vide
+        if(localStorage.getItem("cart") != null) {
+
+            this.cart = JSON.parse(localStorage.getItem("cart")  || '{}');
+            this.checkIfLocalStorageExist = this.cart.find(obj => obj.id == product.id) ? true : false;
+            
+            // On vérifie si l'article à ajouter au panier est présent dans le panier
+            if(this.checkIfLocalStorageExist) {
+                
+                this.productToUpdate = this.cart.find(obj => obj.id == product.id);
+                this.productToUpdate['quantity'] += 1;
+                
+                this.cart.map(el => el.id == this.productToUpdate['id'] || el)
+            }
+            // Sinon on le rajoute au panier
+            else {
+                product['quantity'] = 1;
+                this.cart.push(product);
+            }
+        }
+        // Sinon on le rajoute au panier
+        else {
+            product['quantity'] = 1;
+            this.cart.push(product);
+        }
+        
+        // On convertit le tableau en chaine de caractère afin de l'insérer dans le localStorage
+        this.cartString = JSON.stringify(this.cart);
+        localStorage.setItem("cart", this.cartString);
     }
 }
