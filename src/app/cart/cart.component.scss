@@ -1,32 +1,29 @@
-.mainDivProduct {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 220px);
-    justify-content: center;
-    margin-bottom: 10px;
-}
+// .mainDivProduct {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fill, 220px);
+//     margin-bottom: 10px;
+// }
 
-.mainDivProduct > img {
-    border-radius: 30px;
-}
+// .mainDivProduct > img {
+//     border-radius: 30px;
+// }
 
 .itemDiv-mainPart {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 40% 30% 30%;
     height: 300px !important;
     overflow: hidden;
     border-radius: 2% 2% 0 0;
     margin: 10%;
-}
-
-.itemDiv-mainPart {
     transform: translateY(0) scale(1.05);
     box-shadow: 12px 12px 5px 5px #ebebeb;
+    box-sizing: border-box;
 }
+
 
 .itemDiv-mainPart-div-img {
     position: sticky;
-    box-sizing: border-box;
-    // height: 100%;
+    height: 100%;
     width: 100%;
     top: 50%;
     bottom: 50%;
@@ -34,8 +31,8 @@
 }
 
 .itemDiv-mainPart-img {
-    // height: 90% !important;
-    width: 90%;
+    max-height: 60% !important;
+    max-width: 60%;
     // left: 5%;
     transition: transform 0.3s, opacity 0.3s;
     object-fit: cover;
@@ -57,6 +54,13 @@
 
 .itemDiv-mainPart-details > .min-specs{
     margin: 3%;
+}
+
+.itemDiv-mainPart-quantity {
+    justify-content: center;
+    height: 40%;
+    left: 50%;
+    position: sticky;
 }
 
 // @media (hover: hover) {
@@ -146,6 +150,7 @@ img#modalImg {
 
     .itemDiv-mainPart {
         margin-bottom: 10%;
+        height: 150px !important;
     }
 }
 
@@ -156,6 +161,7 @@ img#modalImg {
 
     .itemDiv-mainPart {
         margin-bottom: 15%;
+        height: 300px !important;
     }
 
     .itemDiv-mainPart-name {

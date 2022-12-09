@@ -45,6 +45,17 @@
     display: block;
 }
 
+.addBtn {
+    background-color: #1976d2;
+    color: whitesmoke;
+}
+
+.addBtn:hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: #1976d2;
+}
+
 .itemDiv-mainPart-details {
     height: 40%;
 }

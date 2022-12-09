@@ -67,7 +67,9 @@ export class ProductsComponent {
     cart: any[] = [];
     productToUpdate: any[] = [];
     cartString = "";
-    checkIfLocalStorageExist = false;
+    checkIfExistInLocalStorage = false;
+    welcomeTitle = "Welcome in YourShop"
+    originalWelcomeTitle = "Welcome in YourShop"
 
     addToCart(product) {
 
@@ -75,10 +77,10 @@ export class ProductsComponent {
         if(localStorage.getItem("cart") != null) {
 
             this.cart = JSON.parse(localStorage.getItem("cart")  || '{}');
-            this.checkIfLocalStorageExist = this.cart.find(obj => obj.id == product.id) ? true : false;
+            this.checkIfExistInLocalStorage = this.cart.find(obj => obj.id == product.id) ? true : false;
             
             // On vérifie si l'article à ajouter au panier est présent dans le panier
-            if(this.checkIfLocalStorageExist) {
+            if(this.checkIfExistInLocalStorage) {
                 
                 this.productToUpdate = this.cart.find(obj => obj.id == product.id);
                 this.productToUpdate['quantity'] += 1;
@@ -100,5 +102,14 @@ export class ProductsComponent {
         // On convertit le tableau en chaine de caractère afin de l'insérer dans le localStorage
         this.cartString = JSON.stringify(this.cart);
         localStorage.setItem("cart", this.cartString);
+    }
+
+    modifyTitleOver(product) {
+        console.log('here');
+        this.welcomeTitle = "Product selected : "+product['name'];
+    }
+
+    modifyTitleOut() {
+        this.welcomeTitle = this.originalWelcomeTitle;
     }
 }

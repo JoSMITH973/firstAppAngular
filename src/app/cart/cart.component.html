@@ -1,4 +1,5 @@
-<div id="mainDivProduct">
+<div>
+    <h2 *ngIf="emptyCard">{{sentenceEmptyCard}}</h2>
     <div class="itemDiv-mainPart" *ngFor="let item of items">
         <div class="itemDiv-mainPart-div-img">
             <img class="itemDiv-mainPart-img" src={{item.picture}} alt={{item.name}} />
@@ -19,6 +20,14 @@
             <div class="min-specs">
                 Weight : {{item.specifications.weight}}
             </div>
+        </div>
+        <div class="itemDiv-mainPart-quantity">
+            <div class="min-specs">
+                Quantity : {{item.quantity}}
+            </div>
+            <button (click)="removeQuantity(item)">-</button>
+            &nbsp;
+            <button (click)="addQuantity(item)">+</button>
         </div>
     </div>
 </div>
