@@ -37,9 +37,7 @@
 }
 
 .itemDiv-mainPart-img {
-    // height: 90% !important;
     width: 90%;
-    // left: 50%;
     transition: transform 0.3s, opacity 0.3s;
     object-fit: cover;
     display: block;
@@ -68,12 +66,6 @@
     margin: 3%;
 }
 
-// @media (hover: hover) {
-//     .itemDiv-mainPart-img:hover {
-//         transform: translateY(0) scale(1.2);
-//     }
-// }
-    
 .itemDiv-mainPart-name {
     z-index: 100;
     box-sizing: border-box;
@@ -90,10 +82,6 @@
     text-align: center;
     text-overflow: ellipsis;
 }
-
-// .itemDiv-mainPart-img, .itemDiv-mainPart-details, .itemDiv-mainPart-name-title{
-//     cursor: pointer;
-// }
 
 img#modalImg {
     width: 50%;

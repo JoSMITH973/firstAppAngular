@@ -69,8 +69,8 @@ export class ProductsComponent {
     cartString = "";
     checkIfExistInLocalStorage = false;
     welcomeTitle = "Welcome in YourShop"
-    priceStringToInt = 0;
     originalWelcomeTitle = "Welcome in YourShop"
+    priceStringToInt = 0;
 
     addToCart(product) {
 
