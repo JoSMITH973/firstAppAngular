@@ -105,7 +105,6 @@ export class ProductsComponent {
     }
 
     modifyTitleOver(product) {
-        console.log('here');
         this.welcomeTitle = "Product selected : "+product['name'];
     }
 
