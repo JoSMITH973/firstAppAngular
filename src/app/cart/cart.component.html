@@ -1,33 +1,35 @@
 <div>
     <h2 *ngIf="emptyCard">{{sentenceEmptyCard}}</h2>
-    <div class="itemDiv-mainPart" *ngFor="let item of items">
-        <div class="itemDiv-mainPart-div-img">
-            <img class="itemDiv-mainPart-img" src={{item.picture}} alt={{item.name}} />
-        </div>
-        <div class="itemDiv-mainPart-details">
-            <h3 class="specs">
-                {{item.name}}
-            </h3>
-            <h5 class="specs">
-                {{item.specifications.price}}
-            </h5>
-            <div class="specs">
-                Storage : {{item.specifications.storage}}
+    <div *ngIf="!emptyCard">
+        <div class="itemDiv-mainPart" *ngFor="let item of items">
+            <div class="itemDiv-mainPart-div-img">
+                <img class="itemDiv-mainPart-img" src={{item.picture}} alt={{item.name}} />
             </div>
-            <div class="specs">
-                Color : {{item.specifications.color}}
+            <div class="itemDiv-mainPart-details">
+                <h3 class="specs">
+                    {{item.name}}
+                </h3>
+                <h5 class="specs">
+                    {{item.specifications.price}}
+                </h5>
+                <div class="specs">
+                    Storage : {{item.specifications.storage}}
+                </div>
+                <div class="specs">
+                    Color : {{item.specifications.color}}
+                </div>
+                <div class="specs">
+                    Weight : {{item.specifications.weight}}
+                </div>
             </div>
-            <div class="specs">
-                Weight : {{item.specifications.weight}}
+            <div class="itemDiv-mainPart-quantity">
+                <h4 class="specs">
+                    Quantity : {{item.quantity}}
+                </h4>
+                <button class (click)="removeQuantity(item)">-</button>
+                &nbsp; &nbsp; &nbsp;
+                <button (click)="addQuantity(item)">+</button>
             </div>
-        </div>
-        <div class="itemDiv-mainPart-quantity">
-            <h4 class="specs">
-                Quantity : {{item.quantity}}
-            </h4>
-            <button class (click)="removeQuantity(item)">-</button>
-            &nbsp; &nbsp; &nbsp;
-            <button (click)="addQuantity(item)">+</button>
         </div>
     </div>
     <div>
@@ -45,7 +47,7 @@
                     </th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody *ngIf="!emptyCard">
                 <tr *ngFor="let item of items">
                     <td>
                         {{item.name}}

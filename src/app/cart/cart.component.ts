@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { empty } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class CartComponent implements OnInit {
     sentenceEmptyCard = "Your card is empty";
     items: any[] = JSON.parse(localStorage.getItem("cart") || '{}');
-    emptyCard = this.items.length == 0;
+    emptyCard: boolean = this.items.length == undefined;
     productToUpdate: any[] = [];
     priceStringToInt = 0;
     // Variable pour calculer le prix total
@@ -21,9 +22,11 @@ export class CartComponent implements OnInit {
 
     calculateTotalCosts() {
         this.totalInCart = 0;
-        this.items.forEach((el) => {
-            this.totalInCart += Number(el['totalCosts'].substring(0, el['totalCosts'].length-1));
-        })
+        if(!this.emptyCard) {
+            this.items.forEach((el) => {
+                this.totalInCart += Number(el['totalCosts'].substring(0, el['totalCosts'].length-1));
+            })
+        }
         this.totalCosts = this.totalInCart+"$";
     }
 
