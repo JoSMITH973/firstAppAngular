@@ -69,6 +69,7 @@ export class ProductsComponent {
     cartString = "";
     checkIfExistInLocalStorage = false;
     welcomeTitle = "Welcome in YourShop"
+    priceStringToInt = 0;
     originalWelcomeTitle = "Welcome in YourShop"
 
     addToCart(product) {
@@ -84,18 +85,22 @@ export class ProductsComponent {
                 
                 this.productToUpdate = this.cart.find(obj => obj.id == product.id);
                 this.productToUpdate['quantity'] += 1;
+                this.priceStringToInt = this.productToUpdate['specifications']['price'].substring(0, this.productToUpdate['specifications']['price'].length-1);
+                this.productToUpdate['totalCosts'] = this.productToUpdate['quantity'] * this.priceStringToInt + "$";
                 
                 this.cart.map(el => el.id == this.productToUpdate['id'] || el)
             }
             // Sinon on le rajoute au panier
             else {
                 product['quantity'] = 1;
+                product['totalCosts'] = product['specifications']['price'];
                 this.cart.push(product);
             }
         }
         // Sinon on le rajoute au panier
         else {
             product['quantity'] = 1;
+            product['totalCosts'] = product['specifications']['price'];
             this.cart.push(product);
         }
         

@@ -5,29 +5,72 @@
             <img class="itemDiv-mainPart-img" src={{item.picture}} alt={{item.name}} />
         </div>
         <div class="itemDiv-mainPart-details">
-            <h3 class="maj-specs">
+            <h3 class="specs">
                 {{item.name}}
             </h3>
-            <h5 class="maj-specs">
+            <h5 class="specs">
                 {{item.specifications.price}}
             </h5>
-            <div class="min-specs">
+            <div class="specs">
                 Storage : {{item.specifications.storage}}
             </div>
-            <div class="min-specs">
+            <div class="specs">
                 Color : {{item.specifications.color}}
             </div>
-            <div class="min-specs">
+            <div class="specs">
                 Weight : {{item.specifications.weight}}
             </div>
         </div>
         <div class="itemDiv-mainPart-quantity">
-            <div class="min-specs">
+            <h4 class="specs">
                 Quantity : {{item.quantity}}
-            </div>
-            <button (click)="removeQuantity(item)">-</button>
-            &nbsp;
+            </h4>
+            <button class (click)="removeQuantity(item)">-</button>
+            &nbsp; &nbsp; &nbsp;
             <button (click)="addQuantity(item)">+</button>
         </div>
+    </div>
+    <div>
+        <table class="">
+            <thead>
+                <tr>
+                    <th>
+                        Product
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Costs
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items">
+                    <td>
+                        {{item.name}}
+                    </td>
+                    <td class="number">
+                        {{item.quantity}} 
+                    </td>
+                    <td class="number">
+                        {{item.totalCosts}}
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="totalCosts">
+                        <p>
+                            Total Costs
+                        </p>
+                    </td>
+                    <td></td>
+                    <td class="number">
+                        {{totalCosts}}
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>

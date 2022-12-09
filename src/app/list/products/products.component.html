@@ -9,19 +9,19 @@
                 <img class="itemDiv-mainPart-img" src={{product.picture}} alt={{product.name}} />
             </div>
             <div class="itemDiv-mainPart-details">
-                <h3 class="maj-specs" >
+                <h3 class="specs" >
                     {{product.name}}
                 </h3>
-                <h5 class="maj-specs" >
+                <h5 class="specs" >
                     {{product.specifications.price}}
                 </h5>
-                <div class="min-specs">
+                <div class="specs">
                     Storage : {{product.specifications.storage}}
                 </div>
-                <div class="min-specs">
+                <div class="specs">
                     Color : {{product.specifications.color}}
                 </div>
-                <div class="min-specs">
+                <div class="specs">
                     Weight : {{product.specifications.weight}}
                 </div>
                 <button class="addBtn" (mouseover)="modifyTitleOver(product)" (mouseleave)="modifyTitleOut()" (click)="addToCart(product)">
